@@ -2,6 +2,8 @@
 build/*
 *.pbxuser
 *.move1v3
+*.perspective
+*.perspectivev3
 
 # old skool
 .svn
@@ -9,3 +11,6 @@ build/*
 # osx noise
 .DS_Store
 profile
+
+*.swp
+*~.nib
