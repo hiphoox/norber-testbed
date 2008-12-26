@@ -11,10 +11,12 @@
 #import "ppp.h"
 
 @interface MainViewController : UIViewController {
-  UILabel *cardLabel;
+  UILabel *cardNameLabel;
+  UILabel *cardNumberLabel;
 }
 
-@property (nonatomic, retain) IBOutlet UILabel *cardLabel;
+@property (nonatomic, retain) IBOutlet UILabel *cardNameLabel;
+@property (nonatomic, retain) IBOutlet UILabel *cardNumberLabel;
 
 - (void)setCardLabelText: (NSString *)newCardLabel;
 

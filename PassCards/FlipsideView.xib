@@ -36,7 +36,7 @@
 				<int key="NSvFlags">274</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUILabel" id="831836949">
+					<object class="IBUILabel" id="251538076">
 						<reference key="NSNextResponder" ref="249263867"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{86, 53}, {121, 21}}</string>
@@ -53,7 +53,7 @@
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">1.000000e+01</float>
 					</object>
-					<object class="IBUITextField" id="359008991">
+					<object class="IBUITextField" id="187814288">
 						<reference key="NSNextResponder" ref="249263867"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{215, 48}, {191, 31}}</string>
@@ -66,7 +66,7 @@
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MAA</bytes>
-							<object class="NSColorSpace" key="NSCustomColorSpace" id="342261617">
+							<object class="NSColorSpace" key="NSCustomColorSpace" id="662353111">
 								<int key="NSID">2</int>
 							</object>
 						</object>
@@ -75,7 +75,7 @@
 						<float key="IBUIMinimumFontSize">1.700000e+01</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits"/>
 					</object>
-					<object class="IBUIPickerView" id="793255151">
+					<object class="IBUIPickerView" id="383988324">
 						<reference key="NSNextResponder" ref="249263867"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{86, 87}, {320, 216}}</string>
@@ -91,7 +91,7 @@
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MC4yNQA</bytes>
-					<reference key="NSCustomColorSpace" ref="342261617"/>
+					<reference key="NSCustomColorSpace" ref="662353111"/>
 				</object>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
@@ -114,7 +114,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">cardLabel</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="359008991"/>
+						<reference key="destination" ref="187814288"/>
 					</object>
 					<int key="connectionID">45</int>
 				</object>
@@ -146,25 +146,25 @@
 						<reference key="object" ref="249263867"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="359008991"/>
-							<reference ref="831836949"/>
-							<reference ref="793255151"/>
+							<reference ref="187814288"/>
+							<reference ref="251538076"/>
+							<reference ref="383988324"/>
 						</object>
 						<reference key="parent" ref="360949347"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">42</int>
-						<reference key="object" ref="831836949"/>
+						<reference key="object" ref="251538076"/>
 						<reference key="parent" ref="249263867"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">43</int>
-						<reference key="object" ref="359008991"/>
+						<reference key="object" ref="187814288"/>
 						<reference key="parent" ref="249263867"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">44</int>
-						<reference key="object" ref="793255151"/>
+						<reference key="object" ref="383988324"/>
 						<reference key="parent" ref="249263867"/>
 					</object>
 				</object>

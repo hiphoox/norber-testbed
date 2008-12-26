@@ -125,6 +125,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				6A3D87C30F0580AE00BCF2BA /* Domain */,
 				6A3D85590F04984200BCF2BA /* Views */,
 				6A3D85440F0497F700BCF2BA /* Crypto Sources */,
 				289233A00DB2D0730083E9F9 /* Main View */,
@@ -191,6 +192,13 @@
 				6A3D854E0F04983000BCF2BA /* FlipView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		6A3D87C30F0580AE00BCF2BA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -13,7 +13,8 @@
 
 @implementation MainViewController
 
-@synthesize cardLabel;
+@synthesize cardNameLabel;
+@synthesize cardNumberLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -24,7 +25,7 @@
 
 - (void)setCardLabelText: (NSString *)newCardLabel
 {
-  [cardLabel setText:newCardLabel];
+  [cardNameLabel setText:newCardLabel];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -51,16 +52,16 @@
 	[backView release];	
 
   // Add the password label
-	cardLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 445.0f, 80.0f)];
-	cardLabel.center = CGPointMake(460.0f / 2.0f, 80.0f);
-	cardLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:28.0f];
-	cardLabel.backgroundColor = [UIColor clearColor];
-	cardLabel.textColor = [UIColor whiteColor];
-	cardLabel.textAlignment = UITextAlignmentCenter;
-	cardLabel.tag = LABEL_TEXT;
-	[cardLabel setText:@"ETIQUETA"];
-	[self.view addSubview:cardLabel];
-	[cardLabel release];
+	//cardNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 445.0f, 80.0f)];
+	//cardNameLabel.center = CGPointMake(460.0f / 2.0f, 80.0f);
+	cardNameLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:20.0f];
+	cardNameLabel.backgroundColor = [UIColor clearColor];
+	cardNameLabel.textColor = [UIColor whiteColor];
+	//cardNameLabel.textAlignment = UITextAlignmentCenter;
+	cardNameLabel.tag = LABEL_TEXT;
+	[cardNameLabel setText:@"ETIQUETA"];
+	[self.view addSubview:cardNameLabel];
+	[cardNameLabel release];
   
 	// Add the password label
 	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 445.0f, 80.0f)];
