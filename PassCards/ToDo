@@ -1,25 +1,27 @@
-Card
+Entidad Card
 	Atributo:
-	passCodes
-	cardNumber
-	nextValidCode
-	columns
-	rows
+        passCodes
+        cardNumber
+        nextValidCode
+        columns
+        rows
 	Metodos:
-	isValid
-	getCodeAtRow:atColumn:
+        isValid
+        getCodeAtRow:atColumn:
 
-Cuando la tarjeta se invalide debe notificar al servicio.
+- Cuando la tarjeta se invalide debe notificar al servicio.
 
-Service
+Entidad Service
 	Atributo:
-	name
-	nextValidCard
-	passcodeLength
-	characterSet
-	sequenceKey
-	skin
+        name
+        nextValidCard
+        passcodeLength
+        characterSet
+        sequenceKey
+        skin
 	Metodos:
-	getCard: index
-	getCard
+        getCard: index
+        getCard
 	
+- Usar como convención la nomenclatura de coordenadas de la tarjeta como Columnas: números, Filas: Letras
+- Diseñar feature que permita a cada servicio customizar la nomenclatura de las columnas/filas
