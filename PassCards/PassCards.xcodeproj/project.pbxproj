@@ -20,6 +20,7 @@
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233AF0DB2D0DB0083E9F9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* RootViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		49A68BB60F06323F00DE5580 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49A68BB50F06323F00DE5580 /* Settings.bundle */; };
 		6A3D85550F04983000BCF2BA /* FlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D854E0F04983000BCF2BA /* FlipView.m */; };
 		6A3D85560F04983000BCF2BA /* ppp.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D854F0F04983000BCF2BA /* ppp.c */; };
 		6A3D85570F04983000BCF2BA /* rijndael.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D85510F04983000BCF2BA /* rijndael.c */; };
@@ -54,6 +55,7 @@
 		289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideViewController.m; path = Classes/FlipsideViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PassCards_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassCards_Prefix.pch; sourceTree = "<group>"; };
+		49A68BB50F06323F00DE5580 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		6A3D854D0F04983000BCF2BA /* FlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipView.h; sourceTree = "<group>"; };
 		6A3D854E0F04983000BCF2BA /* FlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipView.m; sourceTree = "<group>"; };
 		6A3D854F0F04983000BCF2BA /* ppp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ppp.c; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				49A68BB40F06322000DE5580 /* Settings */,
 				6A3D87C30F0580AE00BCF2BA /* Domain */,
 				6A3D85590F04984200BCF2BA /* Views */,
 				6A3D85440F0497F700BCF2BA /* Crypto Sources */,
@@ -179,6 +182,14 @@
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49A68BB40F06322000DE5580 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				49A68BB50F06323F00DE5580 /* Settings.bundle */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		6A3D85440F0497F700BCF2BA /* Crypto Sources */ = {
@@ -269,6 +280,7 @@
 				6A3D857C0F04993300BCF2BA /* frontside.png in Resources */,
 				6A3D857D0F04993300BCF2BA /* icon.png in Resources */,
 				6A3D87D30F05E0E900BCF2BA /* ToDo in Resources */,
+				49A68BB60F06323F00DE5580 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
