@@ -115,8 +115,11 @@ char * RetrievePasscodes( OneTwoEight firstPasscodeNumber,
 			
       *(passcodeListBuffer+c) = alphabet[index];
       ++c;
-      if ( ( ( ( i + 1 ) % passcodeLength ) == 0 ) && (passcodeCount > 1)) {
-				*(passcodeListBuffer+c) = ' ';
+      if ( ( ( i + 1 ) % passcodeLength ) == 0) {
+        if (passcodeCount > 1) 
+          *(passcodeListBuffer+c) = ' '; //Mark the end of the passcode
+        else 
+          *(passcodeListBuffer+c) = '\0'; //Mark the end of the string
 				++c;
       }
       --passcodeCount;
