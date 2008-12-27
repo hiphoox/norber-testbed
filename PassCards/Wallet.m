@@ -41,7 +41,6 @@
   [newCard setColumns:15];
   [newCard setCardNumber:1];
   
-  //FIXIT. We need to convert NSString to c strings. 
   char *passcodes = PassCodesFrom([[self sequenceKey] UTF8String], 
                                   [self nextValidCard],
                                   [self passcodeCount],

@@ -75,7 +75,7 @@ char * RetrievePasscodes( OneTwoEight firstPasscodeNumber,
   char * alphabet = (char *)malloc( alphabetLength + 1 );
   strcpy( alphabet, sourceAlphabet );
 	
-  char * passcodeListBuffer = (char *)malloc( ( passcodeLength + 1 ) * passcodeCount + 1 );
+  char * passcodeListBuffer = (char *)malloc( ( passcodeLength + 1 ) * passcodeCount /*+ 1*/ );
 	
   for ( i = 0; i < alphabetLength; ++i ) {
     unsigned int j;
@@ -115,7 +115,7 @@ char * RetrievePasscodes( OneTwoEight firstPasscodeNumber,
 			
       *(passcodeListBuffer+c) = alphabet[index];
       ++c;
-      if ( ( ( i + 1 ) % passcodeLength ) == 0 ) {
+      if ( ( ( ( i + 1 ) % passcodeLength ) == 0 ) && (passcodeCount > 1)) {
 				*(passcodeListBuffer+c) = ' ';
 				++c;
       }
@@ -270,13 +270,10 @@ char* PassCodesFrom( const char *secuenceKey, int offset, int count, const char 
     printf( "%2.2x", key.byte[i] );
   }
   printf( "\n" );
-	
-	char * to_free;
-	
-  OneTwoEight firstPasscode;
-  
+	  
   // Warning! This only uses the bottom 64-bits of argv[2] and hence
   // can't convert a much higher number		
+  OneTwoEight firstPasscode;
   firstPasscode.sixtyfour.low = offset;
   firstPasscode.sixtyfour.high = 0;
   
@@ -286,6 +283,7 @@ char* PassCodesFrom( const char *secuenceKey, int offset, int count, const char 
   
   char * pcl = RetrievePasscodes( firstPasscode, count, &key, alphabet, length );
   
+	char * to_free;	
   to_free = pcl;
   
   while ( *pcl != 0 ) {
@@ -296,10 +294,8 @@ char* PassCodesFrom( const char *secuenceKey, int offset, int count, const char 
     printf( " " );
     ++pcl;
   }
+  printf( "\n" );
   
-  //free( to_free );
-  
-  printf( "\n" );	
   return to_free;
 }
 

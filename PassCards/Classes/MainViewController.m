@@ -57,7 +57,7 @@
 	cardNameLabel.textColor = [UIColor whiteColor];
 	//cardNameLabel.textAlignment = UITextAlignmentCenter;
 	cardNameLabel.tag = LABEL_TEXT;
-	[cardNameLabel setText:@"ETIQUETA"];
+	[cardNameLabel setText:[wallet name]];
 	[self.view addSubview:cardNameLabel];
 	[cardNameLabel release];
   
