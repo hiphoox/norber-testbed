@@ -27,6 +27,9 @@
 		6A3D85650F04990A00BCF2BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3D85640F04990A00BCF2BA /* QuartzCore.framework */; };
 		6A3D857C0F04993300BCF2BA /* frontside.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3D857A0F04993300BCF2BA /* frontside.png */; };
 		6A3D857D0F04993300BCF2BA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3D857B0F04993300BCF2BA /* icon.png */; };
+		6A3D87D30F05E0E900BCF2BA /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = 6A3D87D20F05E0E900BCF2BA /* ToDo */; };
+		6A3D87D60F05E47900BCF2BA /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D87D50F05E47900BCF2BA /* Card.m */; };
+		6A3D87D90F05E48C00BCF2BA /* Wallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D87D80F05E48C00BCF2BA /* Wallet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,11 @@
 		6A3D85640F04990A00BCF2BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		6A3D857A0F04993300BCF2BA /* frontside.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontside.png; sourceTree = "<group>"; };
 		6A3D857B0F04993300BCF2BA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		6A3D87D20F05E0E900BCF2BA /* ToDo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		6A3D87D40F05E47900BCF2BA /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		6A3D87D50F05E47900BCF2BA /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		6A3D87D70F05E48C00BCF2BA /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
+		6A3D87D80F05E48C00BCF2BA /* Wallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wallet.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +159,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6A3D87D20F05E0E900BCF2BA /* ToDo */,
 				6A3D857A0F04993300BCF2BA /* frontside.png */,
 				6A3D857B0F04993300BCF2BA /* icon.png */,
 				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
@@ -197,6 +206,10 @@
 		6A3D87C30F0580AE00BCF2BA /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				6A3D87D40F05E47900BCF2BA /* Card.h */,
+				6A3D87D50F05E47900BCF2BA /* Card.m */,
+				6A3D87D70F05E48C00BCF2BA /* Wallet.h */,
+				6A3D87D80F05E48C00BCF2BA /* Wallet.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -255,6 +268,7 @@
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
 				6A3D857C0F04993300BCF2BA /* frontside.png in Resources */,
 				6A3D857D0F04993300BCF2BA /* icon.png in Resources */,
+				6A3D87D30F05E0E900BCF2BA /* ToDo in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +290,8 @@
 				6A3D85560F04983000BCF2BA /* ppp.c in Sources */,
 				6A3D85570F04983000BCF2BA /* rijndael.c in Sources */,
 				6A3D85580F04983000BCF2BA /* sha2.c in Sources */,
+				6A3D87D60F05E47900BCF2BA /* Card.m in Sources */,
+				6A3D87D90F05E48C00BCF2BA /* Wallet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

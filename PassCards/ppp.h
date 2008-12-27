@@ -19,3 +19,4 @@
 
 
 char* PassCodes( int argc, char * argv[] );
+char* PassCodesFrom( const char *secuenceKey, int offset, int count, const char *alphabet, int length);

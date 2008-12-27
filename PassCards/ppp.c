@@ -163,7 +163,7 @@ void GenerateRandomSequenceKey( SequenceKey * sequenceKey ) {
   GenerateSequenceKeyFromString( buffer, sequenceKey );
 }
 
-int ConvertHexToKey( char * hex, SequenceKey * key ) 
+int ConvertHexToKey( const char * hex, SequenceKey * key ) 
 {
   int i, j;
 	
@@ -257,3 +257,49 @@ char* PassCodes( int argc, char * argv[] )
 	
   return to_free;
 }
+
+char* PassCodesFrom( const char *secuenceKey, int offset, int count, const char *alphabet, int length)
+{
+	
+  SequenceKey key;
+  ConvertHexToKey(secuenceKey, &key);
+	
+  printf( "Sequence Key: " );
+  int i;
+  for ( i = 0; i < SHA256_DIGEST_SIZE; ++i ) {
+    printf( "%2.2x", key.byte[i] );
+  }
+  printf( "\n" );
+	
+	char * to_free;
+	
+  OneTwoEight firstPasscode;
+  
+  // Warning! This only uses the bottom 64-bits of argv[2] and hence
+  // can't convert a much higher number		
+  firstPasscode.sixtyfour.low = offset;
+  firstPasscode.sixtyfour.high = 0;
+  
+  printf( "Using alphabet: %s\n", alphabet );
+  printf( "Passcode length: %d\n", length );
+  printf( "Count: %d\n", count );
+  
+  char * pcl = RetrievePasscodes( firstPasscode, count, &key, alphabet, length );
+  
+  to_free = pcl;
+  
+  while ( *pcl != 0 ) {
+    while ( *pcl != 0 ) {
+      printf( "%c", *pcl );
+      ++pcl;
+    }
+    printf( " " );
+    ++pcl;
+  }
+  
+  //free( to_free );
+  
+  printf( "\n" );	
+  return to_free;
+}
+

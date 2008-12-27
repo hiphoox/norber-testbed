@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FlipView.h"
-#import "ppp.h"
+#import "Wallet.h"
 
 @interface MainViewController : UIViewController {
   UILabel *cardNameLabel;

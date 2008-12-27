@@ -11,7 +11,7 @@ Entidad Card
 
 - Cuando la tarjeta se invalide debe notificar al servicio.
 
-Entidad Service
+Entidad Wallet
 	Atributo:
         name
         nextValidCard

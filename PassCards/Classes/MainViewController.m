@@ -17,10 +17,10 @@
 @synthesize cardNumberLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
+  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+    // Custom initialization
+  }
+  return self;
 }
 
 - (void)setCardLabelText: (NSString *)newCardLabel
@@ -30,14 +30,12 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];
-	char* params[] = {"ppp","5f4b9a6c04b8e3af74eba349bea5655b0977a96037eea8a55b3347d3900043d1","0","5"};
-	char* passcodes = PassCodes(4, params);
+  [super viewDidLoad];
 	
-	
-	NSString *codes = [NSString stringWithCString: passcodes];
-	free(passcodes);
-	
+  Wallet *wallet = [Wallet walletFromName:@"Prueba"];
+  Card *newCard = [wallet getNextValidCard];
+  NSLog(@"Card: %@", newCard);
+  
 	// Create landscape image orientation
 	CGRect apprect;
 	apprect.origin = CGPointMake(0.0f, 0.0f);
@@ -50,7 +48,7 @@
 	[backView setFrame:frame]; // Change image orientation
 	[self.view addSubview:backView];
 	[backView release];	
-
+  
   // Add the password label
 	//cardNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 445.0f, 80.0f)];
 	//cardNameLabel.center = CGPointMake(460.0f / 2.0f, 80.0f);
@@ -71,29 +69,28 @@
 	label.textColor = [UIColor whiteColor];
 	label.textAlignment = UITextAlignmentCenter;
 	label.tag = LABEL_TEXT;
-	[label setText:codes];
+	[label setText:[[newCard passCodes] componentsJoinedByString:@" "]];
 	[self.view addSubview:label];
 	[label release];
 	
-	NSLog(codes);
 }
 
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+  // Return YES for supported orientations
+  return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
+  [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
+  // Release anything that's not essential, such as cached data
 }
 
 
 - (void)dealloc {
-    [super dealloc];
+  [super dealloc];
 }
 
 
