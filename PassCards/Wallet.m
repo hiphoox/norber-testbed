@@ -41,7 +41,11 @@
   [newCard setColumns:15];
   [newCard setCardNumber:1];
   
-  char *passcodes = PassCodesFrom([[self sequenceKey] UTF8String], 
+  SequenceKey key;
+  ConvertHexToKey([[self sequenceKey] UTF8String], &key);
+  //GenerateRandomSequenceKey(&key);
+  
+  char *passcodes = PassCodesFrom(key, 
                                   [self nextValidCard],
                                   [self passcodeCount],
                                   [[self characterSet] UTF8String],
@@ -49,7 +53,7 @@
   
 	NSString *codes = [NSString stringWithCString: passcodes];  
   NSArray *passCodes = [codes componentsSeparatedByString:@" "];
-
+  
   [newCard setPassCodes:passCodes];
   free(passcodes);
   

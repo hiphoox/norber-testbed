@@ -17,6 +17,25 @@
 #include "rijndael.h"
 #include "sha2.h"
 
+#pragma pack(push,1)
 
-char* PassCodes( int argc, char * argv[] );
-char* PassCodesFrom( const char *secuenceKey, int offset, int count, const char *alphabet, int length);
+typedef unsigned char Byte;
+typedef unsigned long long SixtyFour;
+
+typedef union __OneTwoEight {
+  struct {
+    SixtyFour low;
+    SixtyFour high;
+  } sixtyfour;
+  Byte byte[16];
+} OneTwoEight;
+
+typedef struct __SequenceKey {
+  Byte byte[SHA256_DIGEST_SIZE];
+} SequenceKey;
+
+#pragma pack(pop)
+
+char* PassCodesFrom( SequenceKey sequenceKey, int offset, int count, const char *alphabet, int length);
+void GenerateRandomSequenceKey( SequenceKey *sequenceKey );
+int ConvertHexToKey( const char *hex, SequenceKey *sequenceKey );

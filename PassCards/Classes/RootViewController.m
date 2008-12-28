@@ -27,6 +27,7 @@
   [viewController release];
   
   [self.view insertSubview:mainViewController.view belowSubview:infoButton];
+  [flipsideNavigationBar removeFromSuperview]; //At the beginning hide Navigation bar
 }
 
 
@@ -34,22 +35,7 @@
   
   FlipsideViewController *viewController = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
   self.flipsideViewController = viewController;
-  [viewController release];
-  
-  // Set up the navigation bar
-  UINavigationBar *aNavigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0.0, 0.0, 480.0, 44.0)];
-  aNavigationBar.barStyle = UIBarStyleBlackOpaque;
-  self.flipsideNavigationBar = aNavigationBar;
-  [aNavigationBar release];
-  
-  [self.flipsideViewController.view setFrame:CGRectMake(0.0, 0.0, 480.0, 320.0)]; // Change orientation
-  
-  UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(toggleView)];
-  UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"PassCards"];
-  navigationItem.rightBarButtonItem = buttonItem;
-  [flipsideNavigationBar pushNavigationItem:navigationItem animated:NO];
-  [navigationItem release];
-  [buttonItem release];
+  [viewController release];  
 }
 
 
@@ -65,7 +51,8 @@
   UIView *mainView = mainViewController.view;
   UIView *flipsideView = flipsideViewController.view;
   
-  [mainViewController setCardLabelText: [[flipsideViewController cardLabel] text]];
+  NSString *newWalletName = [[flipsideViewController cardLabel] text];
+  [mainViewController setWalletName: newWalletName];
   
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:1];
@@ -78,6 +65,9 @@
     [infoButton removeFromSuperview];
     [self.view addSubview:flipsideView];
     [self.view insertSubview:flipsideNavigationBar aboveSubview:flipsideView];
+    //FIX: We need to set the frame sizes because otherwise the navigation bar appears incomplete.
+    //Norberto Ortigoza. 28/Dic/2008
+    [flipsideNavigationBar setFrame:CGRectMake(0.0, 0.0, 480.0, 44.0)]; 
     [mainViewController viewDidDisappear:YES];
     [flipsideViewController viewDidAppear:YES];
     
@@ -102,7 +92,6 @@
 }
 
 
-
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
   // Release anything that's not essential, such as cached data
@@ -114,6 +103,7 @@
   [flipsideNavigationBar release];
   [mainViewController release];
   [flipsideViewController release];
+  
   [super dealloc];
 }
 

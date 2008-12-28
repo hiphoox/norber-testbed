@@ -57,21 +57,6 @@
 		else 
 			dirString = kCATransitionFromRight;
 	} 
-	else if (fabsf(startTouchPosition.y - currentTouchPosition.y) >= 
-					 HORIZ_SWIPE_DRAG_MIN && 
-					 fabsf(startTouchPosition.x - currentTouchPosition.x) <= 
-					 VERT_SWIPE_DRAG_MAX)
-	{ 
-		// Vertical Swipe
-		if (startTouchPosition.y < currentTouchPosition.y) 
-			dirString = kCATransitionFromBottom;
-		else 
-			dirString = kCATransitionFromTop;
-	} else 
-	{
-		// Process a non-swipe event. 
-		// dirString = NULL;
-	}
 } 
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event 
@@ -79,7 +64,6 @@
 	if (dirString) 
 	{
 		CATransition *animation = [self getAnimation:dirString];
-		[[self superview] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
 		[[[self superview] layer] addAnimation:animation forKey:kAnimationKey];
 		
 	}

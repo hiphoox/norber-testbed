@@ -12,25 +12,6 @@
 
 #include "ppp.h"
 
-#pragma pack(push,1)
-
-typedef unsigned char Byte;
-typedef unsigned long long SixtyFour;
-
-typedef union __OneTwoEight {
-  struct {
-    SixtyFour low;
-    SixtyFour high;
-  } sixtyfour;
-  Byte byte[16];
-} OneTwoEight;
-
-typedef struct __SequenceKey {
-  Byte byte[SHA256_DIGEST_SIZE];
-} SequenceKey;
-
-#pragma pack(pop)
-
 // Increment by one a 128-bit unsigned integer
 
 void inc( OneTwoEight * i ) 
@@ -131,14 +112,13 @@ char * RetrievePasscodes( OneTwoEight firstPasscodeNumber,
   return passcodeListBuffer;
 }
 
-void GenerateSequenceKeyFromString( char * string,
-																	 SequenceKey * sequenceKey )
+void GenerateSequenceKeyFromString( char *string, SequenceKey *sequenceKey )
 {
   sha256( (const unsigned char *)string, strlen( string ),
 				 (unsigned char *)sequenceKey );
 }
 
-void GenerateRandomSequenceKey( SequenceKey * sequenceKey ) {
+void GenerateRandomSequenceKey( SequenceKey *sequenceKey ) {
   struct timeval t;
   gettimeofday( &t, 0 );
 	
@@ -166,7 +146,7 @@ void GenerateRandomSequenceKey( SequenceKey * sequenceKey ) {
   GenerateSequenceKeyFromString( buffer, sequenceKey );
 }
 
-int ConvertHexToKey( const char * hex, SequenceKey * key ) 
+int ConvertHexToKey( const char *hex, SequenceKey *sequenceKey ) 
 {
   int i, j;
 	
@@ -175,104 +155,35 @@ int ConvertHexToKey( const char * hex, SequenceKey * key )
     sprintf( pair, "%c%c", hex[i], hex[i+1] );
     int x;
     sscanf( pair, "%x", &x );
-    key->byte[j] = (Byte)x;
+    sequenceKey->byte[j] = (Byte)x;
   }
 	return 1;
 }
 
-char* PassCodes( int argc, char * argv[] )
-{
-  if ( argc == 1 ) {
-    printf( "Error: You must provide the passphrase or sequence key as the first parameter\n" );
-    printf( "ppp (<sequencekey>|<passphrase>) (<offset> (<count> (<alphabet> (<passcodelength>))))\n" );
-    return "";
-  }
-	
-  SequenceKey key;
-	
-  if ( strlen( argv[1] ) == 0 ) {
-    printf( "Generating random sequence key\n" );
-    GenerateRandomSequenceKey( &key );
-  } else {
-    if ( ( strlen( argv[1] ) == 64 ) && ( ConvertHexToKey( argv[1], &key ) ) ) {
-      printf( "Using entered sequence key\n" );
-		} else {
-      printf( "Generating sequence key from passphrase\n" );
-      GenerateSequenceKeyFromString( argv[1], &key );
-    }
-  }
-	
-  printf( "Sequence Key: " );
+
+void ConvertKeyToHex(char* sequence_buffer,SequenceKey sequenceKey) {
   int i;
+  const int character_buffer_size = 2;
+  char buffer[character_buffer_size+1]; ///We need to add space for string character terminator
+  
+  strcpy(sequence_buffer, "");
   for ( i = 0; i < SHA256_DIGEST_SIZE; ++i ) {
-    printf( "%2.2x", key.byte[i] );
+    sprintf(buffer, "%2.2x", sequenceKey.byte[i] );
+    printf("%2.2x", sequenceKey.byte[i] );
+    strcat(sequence_buffer, buffer);
   }
-  printf( "\n" );
-	
-	char * to_free;
-	
-  if ( argc >= 4 ) {
-    OneTwoEight firstPasscode;
-    
-    // Warning! This only uses the bottom 64-bits of argv[2] and hence
-    // can't convert a much higher number
-		
-    firstPasscode.sixtyfour.low = atoi( argv[2] );
-    firstPasscode.sixtyfour.high = 0;
-		
-    int count = atoi( argv[3] );
-		
-    char * pppv2_alphabet = "!#%+23456789=:?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
-		
-    char * alphabet = pppv2_alphabet;
-		
-    if ( argc >= 5 ) {
-      alphabet = argv[4];
-    }
-    
-    printf( "Using alphabet: %s\n", alphabet );
-		
-    int length = 4;
-		
-    if ( argc == 6 ) {
-      length = atoi( argv[5] );
-    }
-		
-    printf( "Passcode length: %d\n", length );
-		
-    char * pcl = RetrievePasscodes( firstPasscode, count, &key, alphabet, length );
-		
-    to_free = pcl;
-		
-    while ( *pcl != 0 ) {
-      while ( *pcl != 0 ) {
-				printf( "%c", *pcl );
-				++pcl;
-      }
-      printf( " " );
-      ++pcl;
-    }
-		
-    //free( to_free );
-		
-    printf( "\n" );
-  }
-	
-  return to_free;
+  
+  printf("\n");
+
 }
 
-char* PassCodesFrom( const char *secuenceKey, int offset, int count, const char *alphabet, int length)
+
+char* PassCodesFrom( SequenceKey sequenceKey, int offset, int count, const char *alphabet, int length)
 {
-	
-  SequenceKey key;
-  ConvertHexToKey(secuenceKey, &key);
-	
-  printf( "Sequence Key: " );
-  int i;
-  for ( i = 0; i < SHA256_DIGEST_SIZE; ++i ) {
-    printf( "%2.2x", key.byte[i] );
-  }
-  printf( "\n" );
+  const int buffer_size = SHA256_DIGEST_SIZE*2;
+  char sequence_buffer[buffer_size+1]; //We need to add space for string character terminator
+  ConvertKeyToHex(sequence_buffer,sequenceKey);
+  printf( "Sequence Key: %s \n", sequence_buffer );
 	  
   // Warning! This only uses the bottom 64-bits of argv[2] and hence
   // can't convert a much higher number		
@@ -284,7 +195,7 @@ char* PassCodesFrom( const char *secuenceKey, int offset, int count, const char 
   printf( "Passcode length: %d\n", length );
   printf( "Count: %d\n", count );
   
-  char * pcl = RetrievePasscodes( firstPasscode, count, &key, alphabet, length );
+  char * pcl = RetrievePasscodes( firstPasscode, count, &sequenceKey, alphabet, length );
   
 	char * to_free;	
   to_free = pcl;

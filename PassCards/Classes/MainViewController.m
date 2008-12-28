@@ -9,12 +9,15 @@
 #import "MainViewController.h"
 #import "MainView.h"
 
-#define LABEL_TEXT		993
+#define LABEL_TEXT		990
+#define LABEL_CARD_NUMBER		991
 
 @implementation MainViewController
 
 @synthesize cardNameLabel;
 @synthesize cardNumberLabel;
+@synthesize backgroundView;
+@synthesize currentWallet;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
   if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -23,45 +26,31 @@
   return self;
 }
 
-- (void)setCardLabelText: (NSString *)newCardLabel
+- (void)setWalletName: (NSString *)newWalletName
 {
-  [cardNameLabel setText:newCardLabel];
+  [currentWallet setName:newWalletName];
+  [cardNameLabel setText:newWalletName];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
   [super viewDidLoad];
 	
-  Wallet *wallet = [Wallet walletFromName:@"Prueba"];
-  Card *newCard = [wallet getNextValidCard];
+  currentWallet = [[Wallet walletFromName:@"Prueba"] retain];
+  Card *newCard = [currentWallet getNextValidCard];
   NSLog(@"Card: %@", newCard);
   
-	// Create landscape image orientation
-	CGRect apprect;
-	apprect.origin = CGPointMake(0.0f, 0.0f);
-	apprect.size = CGSizeMake(480.0f, 300.0f);
-	CGRect frame = CGRectInset(apprect, 0, 0);
-	
-	UIImageView *backView = [[FlipView alloc] initWithFrame:self.view.bounds];
-	[backView setImage:[UIImage imageNamed:@"frontside.png"]];
-	[backView setUserInteractionEnabled:YES];
-	[backView setFrame:frame]; // Change image orientation
-	[self.view addSubview:backView];
-	[backView release];	
-  
-  // Add the password label
-	//cardNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 445.0f, 80.0f)];
-	//cardNameLabel.center = CGPointMake(460.0f / 2.0f, 80.0f);
-	cardNameLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:20.0f];
-	cardNameLabel.backgroundColor = [UIColor clearColor];
-	cardNameLabel.textColor = [UIColor whiteColor];
-	//cardNameLabel.textAlignment = UITextAlignmentCenter;
+  // Configure wallet label
+	cardNameLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:18.0f];
 	cardNameLabel.tag = LABEL_TEXT;
-	[cardNameLabel setText:[wallet name]];
-	[self.view addSubview:cardNameLabel];
-	[cardNameLabel release];
+	[cardNameLabel setText:[currentWallet name]];
   
-	// Add the password label
+  // Configure card number
+	cardNumberLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:18.0f];
+	cardNumberLabel.tag = LABEL_CARD_NUMBER;
+	[cardNumberLabel setText: [NSString stringWithFormat:@"# %d", [currentWallet nextValidCard]]];
+  
+	// Add the passcodes label
 	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 445.0f, 80.0f)];
 	label.center = CGPointMake(460.0f / 2.0f, 160.0f);
 	label.font = [UIFont fontWithName:@"Verdana-Bold" size:28.0f];
@@ -70,9 +59,9 @@
 	label.textAlignment = UITextAlignmentCenter;
 	label.tag = LABEL_TEXT;
 	[label setText:[[newCard passCodes] componentsJoinedByString:@" "]];
-	[self.view addSubview:label];
+	[backgroundView addSubview:label];
 	[label release];
-	
+  
 }
 
 
@@ -90,6 +79,11 @@
 
 
 - (void)dealloc {
+  [currentWallet release];
+  [cardNumberLabel release];
+  [cardNameLabel release];
+  [backgroundView release];
+  
   [super dealloc];
 }
 

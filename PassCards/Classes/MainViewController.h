@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FlipView.h"
 #import "Wallet.h"
 
 @interface MainViewController : UIViewController {
   UILabel *cardNameLabel;
   UILabel *cardNumberLabel;
+  UIImageView *backgroundView;
+  Wallet *currentWallet;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *cardNameLabel;
 @property (nonatomic, retain) IBOutlet UILabel *cardNumberLabel;
+@property (nonatomic, retain) IBOutlet UIImageView *backgroundView;
+@property (nonatomic, retain) Wallet *currentWallet;
 
-- (void)setCardLabelText: (NSString *)newCardLabel;
+- (void)setWalletName: (NSString *)newCardLabel;
 
 @end
