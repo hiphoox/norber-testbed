@@ -39,3 +39,4 @@ typedef struct __SequenceKey {
 char* PassCodesFrom( SequenceKey sequenceKey, int offset, int count, const char *alphabet, int length);
 void GenerateRandomSequenceKey( SequenceKey *sequenceKey );
 int ConvertHexToKey( const char *hex, SequenceKey *sequenceKey );
+char* ConvertKeyToHex(SequenceKey sequenceKey);

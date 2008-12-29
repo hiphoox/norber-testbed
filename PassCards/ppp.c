@@ -146,12 +146,15 @@ void GenerateRandomSequenceKey( SequenceKey *sequenceKey ) {
   GenerateSequenceKeyFromString( buffer, sequenceKey );
 }
 
+const int sequence_buffer_size = SHA256_DIGEST_SIZE*2;
+const int character_buffer_size = 2;
+
 int ConvertHexToKey( const char *hex, SequenceKey *sequenceKey ) 
 {
   int i, j;
-	
-  for ( i = 0, j = 0; i < 64; i += 2, ++j ) {
-    char pair[3];
+
+  for ( i = 0, j = 0; i < sequence_buffer_size; i += 2, ++j ) {
+    char pair[character_buffer_size + 1];
     sprintf( pair, "%c%c", hex[i], hex[i+1] );
     int x;
     sscanf( pair, "%x", &x );
@@ -161,55 +164,44 @@ int ConvertHexToKey( const char *hex, SequenceKey *sequenceKey )
 }
 
 
-void ConvertKeyToHex(char* sequence_buffer,SequenceKey sequenceKey) {
-  int i;
-  const int character_buffer_size = 2;
-  char buffer[character_buffer_size+1]; ///We need to add space for string character terminator
+char* ConvertKeyToHex(SequenceKey sequenceKey) 
+{
+  //We need to add space for string character terminator
+  char character_buffer[character_buffer_size + 1]; 
+  char *sequence_buffer = (char *)malloc( character_buffer_size + 1 ); 
   
   strcpy(sequence_buffer, "");
-  for ( i = 0; i < SHA256_DIGEST_SIZE; ++i ) {
-    sprintf(buffer, "%2.2x", sequenceKey.byte[i] );
-    printf("%2.2x", sequenceKey.byte[i] );
-    strcat(sequence_buffer, buffer);
-  }
-  
-  printf("\n");
+  sequence_buffer[sequence_buffer_size] = '\0';
 
+  for ( int i = 0; i < SHA256_DIGEST_SIZE; ++i ) {
+    sprintf(character_buffer, "%2.2x", sequenceKey.byte[i] );
+    strcat(sequence_buffer, character_buffer);
+  }
+
+  return sequence_buffer;
 }
 
 
 char* PassCodesFrom( SequenceKey sequenceKey, int offset, int count, const char *alphabet, int length)
 {
-  const int buffer_size = SHA256_DIGEST_SIZE*2;
-  char sequence_buffer[buffer_size+1]; //We need to add space for string character terminator
-  ConvertKeyToHex(sequence_buffer,sequenceKey);
-  printf( "Sequence Key: %s \n", sequence_buffer );
-	  
+  char *sequence_buffer = ConvertKeyToHex(sequenceKey);
+
+  printf( "Using Key: %s\n", sequence_buffer);
+  printf( "Using alphabet: %s\n", alphabet );
+  printf( "Passcode length: %d\n", length );
+  printf( "Count: %d\n", count );
+  free(sequence_buffer);
+  
   // Warning! This only uses the bottom 64-bits of argv[2] and hence
   // can't convert a much higher number		
   OneTwoEight firstPasscode;
   firstPasscode.sixtyfour.low = offset;
   firstPasscode.sixtyfour.high = 0;
+    
+  char *pcl = RetrievePasscodes( firstPasscode, count, &sequenceKey, alphabet, length );
+    
+  printf( "Pass codes: %s\n", pcl );
   
-  printf( "Using alphabet: %s\n", alphabet );
-  printf( "Passcode length: %d\n", length );
-  printf( "Count: %d\n", count );
-  
-  char * pcl = RetrievePasscodes( firstPasscode, count, &sequenceKey, alphabet, length );
-  
-	char * to_free;	
-  to_free = pcl;
-  
-  while ( *pcl != 0 ) {
-    while ( *pcl != 0 ) {
-      printf( "%c", *pcl );
-      ++pcl;
-    }
-    printf( " " );
-    ++pcl;
-  }
-  printf( "\n" );
-  
-  return to_free;
+  return pcl;
 }
 

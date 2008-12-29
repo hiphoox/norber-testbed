@@ -42,7 +42,7 @@
   [newCard setCardNumber:1];
   
   SequenceKey key;
-  ConvertHexToKey([[self sequenceKey] UTF8String], &key);
+  ConvertHexToKey([[self sequenceKey] UTF8String], &key);  
   //GenerateRandomSequenceKey(&key);
   
   char *passcodes = PassCodesFrom(key, 
