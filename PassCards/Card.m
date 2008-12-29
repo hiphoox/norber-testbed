@@ -17,4 +17,14 @@
 @synthesize columns;
 @synthesize rows;
 
+- (NSString *) passCodeAtRow: (int) currentRow atColumn: (int) currentColumn
+{
+  if(currentRow == 0)
+    return [passCodes objectAtIndex: currentColumn];
+  if(currentColumn == 0)
+    return [passCodes objectAtIndex: currentRow * columns];
+  
+  return [passCodes objectAtIndex:(currentRow * columns + currentColumn)];
+}
+
 @end

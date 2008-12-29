@@ -27,9 +27,8 @@
   [newWallet setCharacterSet: @"!#%+23456789=:?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"];
   [newWallet setSequenceKey:@"5f4b9a6c04b8e3af74eba349bea5655b0977a96037eea8a55b3347d3900043d1"];
   [newWallet setSkin:@"frontside.png"];
-  [newWallet setNextValidCard:0];
+  [newWallet setNextValidCard:1];
   [newWallet setPasscodeLength:4];
-  [newWallet setPasscodeCount:5];
   
   return [newWallet autorelease]; 
 }
@@ -38,24 +37,24 @@
 {
   Card *newCard = [[Card alloc] init];
   [newCard setRows:10];
-  [newCard setColumns:15];
+  [newCard setColumns:7];
   [newCard setCardNumber:1];
   
   SequenceKey key;
   ConvertHexToKey([[self sequenceKey] UTF8String], &key);  
   //GenerateRandomSequenceKey(&key);
   
-  char *passcodes = PassCodesFrom(key, 
+  char *pass_codes_string = PassCodesFrom(key, 
                                   [self nextValidCard],
-                                  [self passcodeCount],
+                                  [newCard columns] * [newCard rows],
                                   [[self characterSet] UTF8String],
                                   [self passcodeLength]);
   
-	NSString *codes = [NSString stringWithCString: passcodes];  
+	NSString *codes = [NSString stringWithCString: pass_codes_string];  
   NSArray *passCodes = [codes componentsSeparatedByString:@" "];
   
   [newCard setPassCodes:passCodes];
-  free(passcodes);
+  free(pass_codes_string);
   
   return [newCard autorelease];
 }

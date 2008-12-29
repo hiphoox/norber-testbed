@@ -23,4 +23,6 @@
 @property (nonatomic) int columns;
 @property (nonatomic) int rows;
 
+- (NSString *) passCodeAtRow: (int) currentRow atColumn: (int) currentColumn;
+
 @end

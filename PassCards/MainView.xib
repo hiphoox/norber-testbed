@@ -52,7 +52,7 @@
 					<object class="IBUILabel" id="533796358">
 						<reference key="NSNextResponder" ref="883825266"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{25, 10}, {342, 21}}</string>
+						<string key="NSFrame">{{36, 14}, {342, 21}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -62,9 +62,9 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText">Service name</string>
-						<object class="NSColor" key="IBUITextColor" id="146218717">
+						<object class="NSColor" key="IBUITextColor" id="127368613">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MSAxIDEAA</bytes>
+							<bytes key="NSRGB">MSAwIDAAA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -73,13 +73,13 @@
 					<object class="IBUILabel" id="501796247">
 						<reference key="NSNextResponder" ref="883825266"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{385, 10}, {78, 21}}</string>
+						<string key="NSFrame">{{385, 14}, {78, 21}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText">Card #</string>
-						<reference key="IBUITextColor" ref="146218717"/>
+						<reference key="IBUITextColor" ref="127368613"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">1.000000e+01</float>
@@ -88,7 +88,10 @@
 				</object>
 				<string key="NSFrameSize">{480, 300}</string>
 				<reference key="NSSuperview"/>
-				<reference key="IBUIBackgroundColor" ref="146218717"/>
+				<object class="NSColor" key="IBUIBackgroundColor">
+					<int key="NSColorSpace">1</int>
+					<bytes key="NSRGB">MSAxIDEAA</bytes>
+				</object>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 			</object>

@@ -32,11 +32,25 @@
   [cardNameLabel setText:newWalletName];
 }
 
+- (UILabel *) addLabelWithText: (NSString *) text  {
+  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 50.0f, 40.0f)];
+  label.font = [UIFont fontWithName:@"Verdana-Bold" size:12.0f];
+  label.backgroundColor = [UIColor clearColor];
+  label.textAlignment = UITextAlignmentCenter;
+  label.text = text;
+  label.textColor = [UIColor blueColor];
+  [backgroundView addSubview:label];
+  [label autorelease];
+
+  return label;
+}
+
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
   [super viewDidLoad];
 	
-  currentWallet = [[Wallet walletFromName:@"Prueba"] retain];
+  currentWallet = [[Wallet walletFromName:@"www.cocoaheads.com"] retain];
   Card *newCard = [currentWallet getNextValidCard];
   NSLog(@"Card: %@", newCard);
   
@@ -50,18 +64,39 @@
 	cardNumberLabel.tag = LABEL_CARD_NUMBER;
 	[cardNumberLabel setText: [NSString stringWithFormat:@"# %d", [currentWallet nextValidCard]]];
   
-	// Add the passcodes label
-	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 445.0f, 80.0f)];
-	label.center = CGPointMake(460.0f / 2.0f, 160.0f);
-	label.font = [UIFont fontWithName:@"Verdana-Bold" size:28.0f];
-	label.backgroundColor = [UIColor clearColor];
-	label.textColor = [UIColor whiteColor];
-	label.textAlignment = UITextAlignmentCenter;
-	label.tag = LABEL_TEXT;
-	[label setText:[[newCard passCodes] componentsJoinedByString:@" "]];
-	[backgroundView addSubview:label];
-	[label release];
+  const int y_offset = 75.0f;
+  const int x_offset = 90.0f;
+  const int y_inc = 20.0f;
+  const int x_inc = 50.0f;
+  int currentRow = 0;
+  int currentColumn = 0;
+
+  NSArray *columHeaders = [NSArray arrayWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G", nil];
+  //Setting Column Headers
+  for (currentColumn = 0; currentColumn < [newCard columns]; ++currentColumn)
+  {
+    UILabel *label = [self addLabelWithText:[columHeaders objectAtIndex: currentColumn]];
+    label.center = CGPointMake(x_offset + (x_inc * currentColumn), y_offset - 20);
+  }
+
+  //Setting Row Headers
+  for (currentRow = 0; currentRow < [newCard rows]; ++currentRow)
+  {
+    UILabel *label = [self addLabelWithText:[NSString stringWithFormat:@"%i", currentRow + 1]];
+    label.center = CGPointMake(x_offset - 40, y_offset + (y_inc * currentRow));
+  }
   
+	// Add the passcode labels
+  for (currentRow = 0; currentRow < [newCard rows]; ++currentRow)
+  {
+    for (currentColumn = 0; currentColumn < [newCard columns]; ++currentColumn)
+    {
+      UILabel *label = [self addLabelWithText:[newCard passCodeAtRow: currentRow atColumn: currentColumn]];
+      label.center = CGPointMake(x_offset + (x_inc * currentColumn), y_offset + (y_inc * currentRow));
+      label.textColor = [UIColor whiteColor];
+      label.tag = LABEL_TEXT;
+    }  
+  }
 }
 
 
