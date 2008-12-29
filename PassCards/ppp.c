@@ -168,7 +168,7 @@ char* ConvertKeyToHex(SequenceKey sequenceKey)
 {
   //We need to add space for string character terminator
   char character_buffer[character_buffer_size + 1]; 
-  char *sequence_buffer = (char *)malloc( character_buffer_size + 1 ); 
+  char *sequence_buffer = (char *)malloc( sequence_buffer_size + 1 ); 
   
   strcpy(sequence_buffer, "");
   sequence_buffer[sequence_buffer_size] = '\0';
@@ -185,12 +185,12 @@ char* ConvertKeyToHex(SequenceKey sequenceKey)
 char* PassCodesFrom( SequenceKey sequenceKey, int offset, int count, const char *alphabet, int length)
 {
   char *sequence_buffer = ConvertKeyToHex(sequenceKey);
-
   printf( "Using Key: %s\n", sequence_buffer);
+  free(sequence_buffer);
+  
   printf( "Using alphabet: %s\n", alphabet );
   printf( "Passcode length: %d\n", length );
   printf( "Count: %d\n", count );
-  free(sequence_buffer);
   
   // Warning! This only uses the bottom 64-bits of argv[2] and hence
   // can't convert a much higher number		

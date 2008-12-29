@@ -35,11 +35,11 @@
 - (UILabel *) addLabelWithText: (NSString *) text  {
   UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 50.0f, 40.0f)];
   label.font = [UIFont fontWithName:@"Verdana-Bold" size:12.0f];
-  label.backgroundColor = [UIColor clearColor];
   label.textAlignment = UITextAlignmentCenter;
   label.text = text;
   label.textColor = [UIColor blueColor];
-  [backgroundView addSubview:label];
+  label.backgroundColor = [UIColor clearColor];
+  [self.backgroundView addSubview: label];
   [label autorelease];
 
   return label;
@@ -50,8 +50,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 	
-  currentWallet = [[Wallet walletFromName:@"www.cocoaheads.com"] retain];
-  Card *newCard = [currentWallet getNextValidCard];
+  self.currentWallet = [Wallet walletFromName:@"www.cocoaheads.com"];
+  Card *newCard = [self.currentWallet getNextValidCard];
   NSLog(@"Card: %@", newCard);
   
   // Configure wallet label
