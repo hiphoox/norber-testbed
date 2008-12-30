@@ -8,7 +8,7 @@
 
 #import "MenuTableViewController.h"
 #import "WalletViewController.h"
-
+#import "CreateWalletViewController.h"
 @implementation MenuTableViewController
 
 /*
@@ -115,9 +115,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    WalletViewController * walletViewController = [[WalletViewController alloc] initWithNibName:@"WalletView" bundle:nil];
-    [self.navigationController pushViewController:walletViewController animated:YES];
-    [walletViewController release];
+    if([indexPath indexAtPosition:0] == 0) { // 'Add new wallet'
+        
+        CreateWalletViewController * viewController = [[CreateWalletViewController alloc] initWithNibName:@"CreateWalletView" bundle:nil];
+        [self.navigationController pushViewController:viewController animated:YES];
+        NSLog(@"Adding a new wallet");
+        [viewController release];
+
+    } else { // use some existing wallet
+
+        WalletViewController * walletViewController = [[WalletViewController alloc] initWithNibName:@"WalletView" bundle:nil];
+        [self.navigationController pushViewController:walletViewController animated:YES];
+        [walletViewController release];
+    }
 }
 
 
