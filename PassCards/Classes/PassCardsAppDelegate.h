@@ -13,12 +13,10 @@
 
 @interface PassCardsAppDelegate : NSObject <UIApplicationDelegate> {
   UIWindow *window;
-  //RootViewController *rootViewController;
   MenuTableViewController *menuViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-//@property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
 @property(nonatomic, retain) IBOutlet MenuTableViewController *menuViewController; 
 
 @end
