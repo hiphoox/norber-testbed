@@ -7,7 +7,7 @@
 //
 
 #import "MenuTableViewController.h"
-
+#import "WalletViewController.h"
 
 @implementation MenuTableViewController
 
@@ -114,10 +114,10 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController];
-	// [anotherViewController release];
+
+	WalletViewController * walletViewController = [[WalletViewController alloc] initWithNibName:@"" bundle:nil];
+    [self.navigationController pushViewController:walletViewController animated:YES];
+    [walletViewController release];
 }
 
 
