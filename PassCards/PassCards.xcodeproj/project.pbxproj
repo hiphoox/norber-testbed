@@ -21,6 +21,7 @@
 		289233AF0DB2D0DB0083E9F9 /* WalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* WalletViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
 		498015F20F0A2C8B00508EC7 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498015F10F0A2C8B00508EC7 /* MenuTableViewController.m */; };
+		49A3B78B0F0A3BF100599040 /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A3B78A0F0A3BF100599040 /* WalletView.xib */; };
 		49A68BB60F06323F00DE5580 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49A68BB50F06323F00DE5580 /* Settings.bundle */; };
 		6A3D85550F04983000BCF2BA /* FlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D854E0F04983000BCF2BA /* FlipView.m */; };
 		6A3D85560F04983000BCF2BA /* ppp.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D854F0F04983000BCF2BA /* ppp.c */; };
@@ -59,6 +60,7 @@
 		32CA4F630368D1EE00C91783 /* PassCards_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassCards_Prefix.pch; sourceTree = "<group>"; };
 		498015F00F0A2C8B00508EC7 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
 		498015F10F0A2C8B00508EC7 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		49A3B78A0F0A3BF100599040 /* WalletView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletView.xib; sourceTree = "<group>"; };
 		49A68BB50F06323F00DE5580 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		6A3D854D0F04983000BCF2BA /* FlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipView.h; sourceTree = "<group>"; };
 		6A3D854E0F04983000BCF2BA /* FlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipView.m; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49A3B78A0F0A3BF100599040 /* WalletView.xib */,
 				6A8E971D0F07E38C00C828B1 /* frontsidea.png */,
 				6A3D87D20F05E0E900BCF2BA /* ToDo */,
 				6A3D857A0F04993300BCF2BA /* frontside.png */,
@@ -274,6 +277,7 @@
 				6A3D87D30F05E0E900BCF2BA /* ToDo in Resources */,
 				49A68BB60F06323F00DE5580 /* Settings.bundle in Resources */,
 				6A8E971E0F07E38C00C828B1 /* frontsidea.png in Resources */,
+				49A3B78B0F0A3BF100599040 /* WalletView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

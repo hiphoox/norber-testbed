@@ -115,7 +115,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-	WalletViewController * walletViewController = [[WalletViewController alloc] initWithNibName:@"" bundle:nil];
+    WalletViewController * walletViewController = [[WalletViewController alloc] initWithNibName:@"WalletView" bundle:nil];
     [self.navigationController pushViewController:walletViewController animated:YES];
     [walletViewController release];
 }
