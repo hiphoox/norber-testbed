@@ -6,9 +6,9 @@
 //  Copyright StoneFree Software 2008. All rights reserved.
 //
 
-#import "MainView.h"
+#import "CardView.h"
 
-@implementation MainView
+@implementation CardView
 
 
 - (id)initWithFrame:(CGRect)frame {

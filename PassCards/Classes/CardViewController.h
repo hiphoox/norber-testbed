@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Wallet.h"
 
-@interface MainViewController : UIViewController {
+@interface CardViewController : UIViewController {
   UILabel *cardNameLabel;
   UILabel *cardNumberLabel;
   UIImageView *backgroundView;
