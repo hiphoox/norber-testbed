@@ -16,10 +16,14 @@
 		280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754C0DD40C5E005A515E /* MainWindow.xib */; };
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
 		289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
-		289233A70DB2D0840083E9F9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
-		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
-		289233AF0DB2D0DB0083E9F9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* RootViewController.m */; };
+		289233A70DB2D0840083E9F9 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* CardView.m */; };
+		289233AE0DB2D0DB0083E9F9 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* CardViewController.m */; };
+		289233AF0DB2D0DB0083E9F9 /* WalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* WalletViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		498015F20F0A2C8B00508EC7 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498015F10F0A2C8B00508EC7 /* MenuTableViewController.m */; };
+		49A3B78B0F0A3BF100599040 /* WalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A3B78A0F0A3BF100599040 /* WalletView.xib */; };
+		49A3B7A10F0A403700599040 /* CreateWalletView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A3B7A00F0A403700599040 /* CreateWalletView.xib */; };
+		49A3B7A50F0A427D00599040 /* CreateWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A3B7A40F0A427D00599040 /* CreateWalletViewController.m */; };
 		49A68BB60F06323F00DE5580 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49A68BB50F06323F00DE5580 /* Settings.bundle */; };
 		6A3D85550F04983000BCF2BA /* FlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D854E0F04983000BCF2BA /* FlipView.m */; };
 		6A3D85560F04983000BCF2BA /* ppp.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D854F0F04983000BCF2BA /* ppp.c */; };
@@ -46,16 +50,22 @@
 		288765580DF743DE002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		289233A20DB2D0840083E9F9 /* FlipsideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideView.h; path = Classes/FlipsideView.h; sourceTree = "<group>"; };
 		289233A30DB2D0840083E9F9 /* FlipsideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideView.m; path = Classes/FlipsideView.m; sourceTree = "<group>"; };
-		289233A40DB2D0840083E9F9 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = Classes/MainView.h; sourceTree = "<group>"; };
-		289233A50DB2D0840083E9F9 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = Classes/MainView.m; sourceTree = "<group>"; };
-		289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		289233AA0DB2D0DB0083E9F9 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		289233AB0DB2D0DB0083E9F9 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		289233A40DB2D0840083E9F9 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = Classes/CardView.h; sourceTree = "<group>"; };
+		289233A50DB2D0840083E9F9 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = Classes/CardView.m; sourceTree = "<group>"; };
+		289233A80DB2D0DB0083E9F9 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		289233A90DB2D0DB0083E9F9 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
+		289233AA0DB2D0DB0083E9F9 /* WalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletViewController.h; sourceTree = "<group>"; };
+		289233AB0DB2D0DB0083E9F9 /* WalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletViewController.m; sourceTree = "<group>"; };
 		289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PassCards_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassCards_Prefix.pch; sourceTree = "<group>"; };
+		498015F00F0A2C8B00508EC7 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		498015F10F0A2C8B00508EC7 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		49A3B78A0F0A3BF100599040 /* WalletView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletView.xib; sourceTree = "<group>"; };
+		49A3B7A00F0A403700599040 /* CreateWalletView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateWalletView.xib; sourceTree = "<group>"; };
+		49A3B7A30F0A427D00599040 /* CreateWalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateWalletViewController.h; sourceTree = "<group>"; };
+		49A3B7A40F0A427D00599040 /* CreateWalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateWalletViewController.m; sourceTree = "<group>"; };
 		49A68BB50F06323F00DE5580 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		6A3D854D0F04983000BCF2BA /* FlipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipView.h; sourceTree = "<group>"; };
 		6A3D854E0F04983000BCF2BA /* FlipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipView.m; sourceTree = "<group>"; };
@@ -95,14 +105,18 @@
 		080E96DDFE201D6D7F000001 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				498015F00F0A2C8B00508EC7 /* MenuTableViewController.h */,
+				498015F10F0A2C8B00508EC7 /* MenuTableViewController.m */,
 				289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */,
 				289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */,
-				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
-				289233A90DB2D0DB0083E9F9 /* MainViewController.m */,
-				289233AA0DB2D0DB0083E9F9 /* RootViewController.h */,
-				289233AB0DB2D0DB0083E9F9 /* RootViewController.m */,
+				289233A80DB2D0DB0083E9F9 /* CardViewController.h */,
+				289233A90DB2D0DB0083E9F9 /* CardViewController.m */,
+				289233AA0DB2D0DB0083E9F9 /* WalletViewController.h */,
+				289233AB0DB2D0DB0083E9F9 /* WalletViewController.m */,
 				1D3623240D0F684500981E51 /* PassCardsAppDelegate.h */,
 				1D3623250D0F684500981E51 /* PassCardsAppDelegate.m */,
+				49A3B7A30F0A427D00599040 /* CreateWalletViewController.h */,
+				49A3B7A40F0A427D00599040 /* CreateWalletViewController.m */,
 			);
 			name = Controllers;
 			path = Classes;
@@ -144,6 +158,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49A3B78A0F0A3BF100599040 /* WalletView.xib */,
 				6A8E971D0F07E38C00C828B1 /* frontsidea.png */,
 				6A3D87D20F05E0E900BCF2BA /* ToDo */,
 				6A3D857A0F04993300BCF2BA /* frontside.png */,
@@ -152,6 +167,7 @@
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
+				49A3B7A00F0A403700599040 /* CreateWalletView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -193,8 +209,8 @@
 			children = (
 				6A3D854D0F04983000BCF2BA /* FlipView.h */,
 				6A3D854E0F04983000BCF2BA /* FlipView.m */,
-				289233A40DB2D0840083E9F9 /* MainView.h */,
-				289233A50DB2D0840083E9F9 /* MainView.m */,
+				289233A40DB2D0840083E9F9 /* CardView.h */,
+				289233A50DB2D0840083E9F9 /* CardView.m */,
 				289233A20DB2D0840083E9F9 /* FlipsideView.h */,
 				289233A30DB2D0840083E9F9 /* FlipsideView.m */,
 			);
@@ -269,6 +285,8 @@
 				6A3D87D30F05E0E900BCF2BA /* ToDo in Resources */,
 				49A68BB60F06323F00DE5580 /* Settings.bundle in Resources */,
 				6A8E971E0F07E38C00C828B1 /* frontsidea.png in Resources */,
+				49A3B78B0F0A3BF100599040 /* WalletView.xib in Resources */,
+				49A3B7A10F0A403700599040 /* CreateWalletView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +300,9 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* PassCardsAppDelegate.m in Sources */,
 				289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */,
-				289233A70DB2D0840083E9F9 /* MainView.m in Sources */,
-				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
-				289233AF0DB2D0DB0083E9F9 /* RootViewController.m in Sources */,
+				289233A70DB2D0840083E9F9 /* CardView.m in Sources */,
+				289233AE0DB2D0DB0083E9F9 /* CardViewController.m in Sources */,
+				289233AF0DB2D0DB0083E9F9 /* WalletViewController.m in Sources */,
 				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
 				6A3D85550F04983000BCF2BA /* FlipView.m in Sources */,
 				6A3D85560F04983000BCF2BA /* ppp.c in Sources */,
@@ -292,6 +310,8 @@
 				6A3D85580F04983000BCF2BA /* sha2.c in Sources */,
 				6A3D87D60F05E47900BCF2BA /* Card.m in Sources */,
 				6A3D87D90F05E48C00BCF2BA /* Wallet.m in Sources */,
+				498015F20F0A2C8B00508EC7 /* MenuTableViewController.m in Sources */,
+				49A3B7A50F0A427D00599040 /* CreateWalletViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

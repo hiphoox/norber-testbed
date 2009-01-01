@@ -7,24 +7,22 @@
 //
 
 #import "PassCardsAppDelegate.h"
-#import "RootViewController.h"
+#import "MenuTableViewController.h"
 
 @implementation PassCardsAppDelegate
 
 
 @synthesize window;
-@synthesize rootViewController;
-
+@synthesize menuViewController;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   
-  [window addSubview:[rootViewController view]];
+  [window addSubview:[menuViewController view]];
   [window makeKeyAndVisible];
 }
 
-
 - (void)dealloc {
-  [rootViewController release];
+  [menuViewController release];
   [window release];
   
   [super dealloc];

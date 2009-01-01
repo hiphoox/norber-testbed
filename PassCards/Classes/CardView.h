@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainView : UIView {
+@interface CardView : UIView {
 
 }
 
