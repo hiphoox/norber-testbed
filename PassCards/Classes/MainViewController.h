@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Wallet.h"
 
+#define PREVIOUS	2	
+#define NEXT	1	
+
 @interface MainViewController : UIViewController {
   UILabel *cardNameLabel;
   UILabel *cardNumberLabel;
@@ -22,5 +25,6 @@
 @property (nonatomic, retain) Wallet *currentWallet;
 
 - (void)setWalletName: (NSString *)newCardLabel;
+- (void) setCardValues: (int) direction;
 
 @end

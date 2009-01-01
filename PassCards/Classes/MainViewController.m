@@ -51,7 +51,7 @@
   [super viewDidLoad];
 	
   self.currentWallet = [Wallet walletFromName:@"www.cocoaheads.com"];
-  Card *newCard = [self.currentWallet getNextValidCard];
+  Card *newCard = [self.currentWallet getCurrentValidCard];
   NSLog(@"Card: %@", newCard);
   
   // Configure wallet label
@@ -62,7 +62,7 @@
   // Configure card number
 	cardNumberLabel.font = [UIFont fontWithName:@"Verdana-Bold" size:18.0f];
 	cardNumberLabel.tag = LABEL_CARD_NUMBER;
-	[cardNumberLabel setText: [NSString stringWithFormat:@"# %d", [currentWallet nextValidCard]]];
+	[cardNumberLabel setText: [NSString stringWithFormat:@"# %d", [currentWallet nextCard]]];
   
   const int y_offset = 75.0f;
   const int x_offset = 90.0f;
@@ -94,11 +94,32 @@
       UILabel *label = [self addLabelWithText:[newCard passCodeAtRow: currentRow atColumn: currentColumn]];
       label.center = CGPointMake(x_offset + (x_inc * currentColumn), y_offset + (y_inc * currentRow));
       label.textColor = [UIColor whiteColor];
-      label.tag = LABEL_TEXT;
+      label.tag = [[NSString stringWithFormat:@"8%d%d", currentRow, currentColumn] intValue];
     }  
   }
 }
 
+- (void) setCardValues: (int) direction
+{
+  Card *newCard;
+  
+  if(direction == NEXT)
+    newCard = [self.currentWallet getNextCard];
+  else
+    newCard = [self.currentWallet getPreviousCard];
+  
+  int currentRow = 0;
+  int currentColumn = 0;
+
+  for (currentRow = 0; currentRow < [newCard rows]; ++currentRow)
+  {
+    for (currentColumn = 0; currentColumn < [newCard columns]; ++currentColumn)
+    {
+      UILabel *label = (UILabel*) [self.view viewWithTag: [[NSString stringWithFormat:@"8%d%d", currentRow, currentColumn] intValue]];
+      label.text = [newCard passCodeAtRow: currentRow atColumn: currentColumn];
+    }  
+  }
+}
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

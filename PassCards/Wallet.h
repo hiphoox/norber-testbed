@@ -15,7 +15,8 @@
 	NSString *characterSet;
 	NSString *sequenceKey;
 	NSString *skin;
-	int nextValidCard;
+	int nextCard;
+	int currentValidCard;
 	int passcodeLength;
 	int passcodeCount;
 }
@@ -24,13 +25,16 @@
 @property (nonatomic, copy) NSString *characterSet;
 @property (nonatomic, copy) NSString *sequenceKey;
 @property (nonatomic, copy) NSString *skin;
-@property (nonatomic) int nextValidCard;
+@property (nonatomic) int nextCard;
+@property (nonatomic) int currentValidCard;
 @property (nonatomic) int passcodeLength;
 @property (nonatomic) int passcodeCount;
 
 +(Wallet *) walletFromName: (NSString *)name;
 
--(Card *) getNextValidCard;
+-(Card *) getCurrentValidCard;
+-(Card *) getNextCard;
+-(Card *) getPreviousCard;
 -(Card *) getCardWithIndex: (int) index;
 
 @end

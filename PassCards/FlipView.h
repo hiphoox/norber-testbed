@@ -7,6 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "MainViewController.h"
 
 #define kAnimationKey @"transitionViewAnimation"
 
@@ -15,5 +16,9 @@
 {
 	CGPoint startTouchPosition;
 	NSString *dirString;
+  MainViewController *mainViewController;
 }
+
+@property (nonatomic, retain) IBOutlet MainViewController *mainViewController;
+
 @end

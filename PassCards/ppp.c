@@ -6,6 +6,8 @@
 //
 // Copyright (c) 2008 John Graham-Cumming
 //
+// Modified by Norberto Ortigoza on 25/12/08.
+//
 // (Released undef the BSD License)
 //
 // -------------------------------------------------------------------------

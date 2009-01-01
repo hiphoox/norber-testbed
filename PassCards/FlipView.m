@@ -10,6 +10,9 @@
 
 
 @implementation FlipView
+
+@synthesize mainViewController;
+
 - (FlipView *) init
 {
 	self = [super init];
@@ -54,8 +57,9 @@
 		if (startTouchPosition.x < currentTouchPosition.x) {
 			dirString = kCATransitionFromLeft;
 		}
-		else 
+		else {
 			dirString = kCATransitionFromRight;
+    }
 	} 
 } 
 
@@ -63,6 +67,13 @@
 {
 	if (dirString) 
 	{
+    if (dirString == kCATransitionFromLeft) {
+      [mainViewController setCardValues: PREVIOUS];
+		}
+		else {
+      [mainViewController setCardValues: NEXT];
+    }
+    
 		CATransition *animation = [self getAnimation:dirString];
 		[[[self superview] layer] addAnimation:animation forKey:kAnimationKey];
 		
