@@ -7,7 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "MainViewController.h"
+#import "CardViewController.h"
 
 #define kAnimationKey @"transitionViewAnimation"
 
@@ -16,9 +16,9 @@
 {
 	CGPoint startTouchPosition;
 	NSString *dirString;
-  MainViewController *mainViewController;
+  CardViewController *mainViewController;
 }
 
-@property (nonatomic, retain) IBOutlet MainViewController *mainViewController;
+@property (nonatomic, retain) IBOutlet CardViewController *mainViewController;
 
 @end

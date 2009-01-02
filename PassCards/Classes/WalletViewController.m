@@ -6,27 +6,27 @@
 //  Copyright StoneFree Software 2008. All rights reserved.
 //
 
-#import "RootViewController.h"
-#import "MainViewController.h"
+#import "WalletViewController.h"
+#import "CardViewController.h"
 #import "FlipsideViewController.h"
 
 
-@implementation RootViewController
+@implementation WalletViewController
 
 @synthesize infoButton;
 @synthesize flipsideNavigationBar;
-@synthesize mainViewController;
+@synthesize cardViewController;
 @synthesize flipsideViewController;
 
 
 - (void)viewDidLoad {
   
   [super viewDidLoad];
-  MainViewController *viewController = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
-  self.mainViewController = viewController;
+  CardViewController *viewController = [[CardViewController alloc] initWithNibName:@"CardView" bundle:nil];
+  self.cardViewController = viewController;
   [viewController release];
   
-  [self.view insertSubview:mainViewController.view belowSubview:infoButton];
+  [self.view insertSubview:cardViewController.view belowSubview:infoButton];
   [flipsideNavigationBar removeFromSuperview]; //At the beginning hide Navigation bar
 }
 
@@ -48,11 +48,11 @@
     [self loadFlipsideViewController];
   }
   
-  UIView *mainView = mainViewController.view;
+  UIView *mainView = cardViewController.view;
   UIView *flipsideView = flipsideViewController.view;
   
   NSString *newWalletName = [[flipsideViewController cardLabel] text];
-  [mainViewController setWalletName: newWalletName];
+  [cardViewController setWalletName: newWalletName];
   
   [UIView beginAnimations:nil context:NULL];
   [UIView setAnimationDuration:1];
@@ -60,7 +60,7 @@
   
   if ([mainView superview] != nil) {
     [flipsideViewController viewWillAppear:YES];
-    [mainViewController viewWillDisappear:YES];
+    [cardViewController viewWillDisappear:YES];
     [mainView removeFromSuperview];
     [infoButton removeFromSuperview];
     [self.view addSubview:flipsideView];
@@ -68,18 +68,18 @@
     //FIX: We need to set the frame sizes because otherwise the navigation bar appears incomplete.
     //Norberto Ortigoza. 28/Dic/2008
     [flipsideNavigationBar setFrame:CGRectMake(0.0, 0.0, 480.0, 44.0)]; 
-    [mainViewController viewDidDisappear:YES];
+    [cardViewController viewDidDisappear:YES];
     [flipsideViewController viewDidAppear:YES];
     
   } else {
-    [mainViewController viewWillAppear:YES];
+    [cardViewController viewWillAppear:YES];
     [flipsideViewController viewWillDisappear:YES];
     [flipsideView removeFromSuperview];
     [flipsideNavigationBar removeFromSuperview];
     [self.view addSubview:mainView];
-    [self.view insertSubview:infoButton aboveSubview:mainViewController.view];
+    [self.view insertSubview:infoButton aboveSubview:cardViewController.view];
     [flipsideViewController viewDidDisappear:YES];
-    [mainViewController viewDidAppear:YES];
+    [cardViewController viewDidAppear:YES];
   }
   [UIView commitAnimations];
 }
@@ -101,7 +101,7 @@
 - (void)dealloc {
   [infoButton release];
   [flipsideNavigationBar release];
-  [mainViewController release];
+  [cardViewController release];
   [flipsideViewController release];
   
   [super dealloc];

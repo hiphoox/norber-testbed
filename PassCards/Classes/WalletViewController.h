@@ -8,19 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class MainViewController;
+@class CardViewController;
 @class FlipsideViewController;
 
-@interface RootViewController : UIViewController {
+@interface WalletViewController : UIViewController {
   
   UIButton *infoButton;
-  MainViewController *mainViewController;
+  CardViewController *cardViewController;
   FlipsideViewController *flipsideViewController;
   UINavigationBar *flipsideNavigationBar;
 }
 
 @property (nonatomic, retain) IBOutlet UIButton *infoButton;
-@property (nonatomic, retain) MainViewController *mainViewController;
+@property (nonatomic, retain) CardViewController *cardViewController;
 @property (nonatomic, retain) IBOutlet UINavigationBar *flipsideNavigationBar;
 @property (nonatomic, retain) FlipsideViewController *flipsideViewController;
 

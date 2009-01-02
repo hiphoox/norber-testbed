@@ -6,13 +6,13 @@
 //  Copyright StoneFree Software 2008. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "CardViewController.h"
 #import "MainView.h"
 
 #define LABEL_TEXT		990
 #define LABEL_CARD_NUMBER		991
 
-@implementation MainViewController
+@implementation CardViewController
 
 @synthesize cardNameLabel;
 @synthesize cardNumberLabel;

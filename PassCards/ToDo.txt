@@ -1,0 +1,44 @@
+
+- Cuando la tarjeta se invalide debe notificar al servicio.
+- Usar como convención la nomenclatura de coordenadas de la tarjeta como Columnas: números, Filas: Letras
+- Diseñar feature que permita a cada servicio customizar la nomenclatura de las columnas/filas
+
+
+Tomar como base:
+Controllers:
+05a - Brightness Toolbar Swatches
+
+
+Views:
+01a-02a - Basic Subview Rects
+05a - Multitouching
+06b - Swap Anim
+07a - FlipView
+07e - FlipViewSwipe
+
+
+01a-Coverflow 2.2 Update
+
+ 
+Alerts:
+04a - Base Menu
+
+
+Tables:
+08a - Reorder
+09a - Chevrons
+
+
+Tables2:
+07a - Picker
+
+
+Controls:
+06a - Dismiss Keyboard
+
+
+Connecting to Services
+01a - Prefs 101
+04a - SQLite
+06b - Keychain Many Vals
+

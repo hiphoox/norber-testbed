@@ -7,24 +7,24 @@
 //
 
 #import "PassCardsAppDelegate.h"
-#import "RootViewController.h"
+#import "WalletViewController.h"
 
 @implementation PassCardsAppDelegate
 
 
 @synthesize window;
-@synthesize rootViewController;
+@synthesize walletViewController;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   
-  [window addSubview:[rootViewController view]];
+  [window addSubview:[walletViewController view]];
   [window makeKeyAndVisible];
 }
 
 
 - (void)dealloc {
-  [rootViewController release];
+  [walletViewController release];
   [window release];
   
   [super dealloc];

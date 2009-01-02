@@ -12,7 +12,7 @@
 #define PREVIOUS	2	
 #define NEXT	1	
 
-@interface MainViewController : UIViewController {
+@interface CardViewController : UIViewController {
   UILabel *cardNameLabel;
   UILabel *cardNumberLabel;
   UIImageView *backgroundView;

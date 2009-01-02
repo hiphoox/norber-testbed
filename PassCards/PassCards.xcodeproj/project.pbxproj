@@ -12,13 +12,13 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754A0DD40C5E005A515E /* FlipsideView.xib */; };
-		280E754E0DD40C5E005A515E /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* MainView.xib */; };
+		280E754E0DD40C5E005A515E /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* CardView.xib */; };
 		280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754C0DD40C5E005A515E /* MainWindow.xib */; };
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
 		289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
-		289233A70DB2D0840083E9F9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
-		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
-		289233AF0DB2D0DB0083E9F9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* RootViewController.m */; };
+		289233A70DB2D0840083E9F9 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* CardView.m */; };
+		289233AE0DB2D0DB0083E9F9 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* CardViewController.m */; };
+		289233AF0DB2D0DB0083E9F9 /* WalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* WalletViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
 		49A68BB60F06323F00DE5580 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49A68BB50F06323F00DE5580 /* Settings.bundle */; };
 		6A3D85550F04983000BCF2BA /* FlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D854E0F04983000BCF2BA /* FlipView.m */; };
@@ -28,7 +28,7 @@
 		6A3D85650F04990A00BCF2BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3D85640F04990A00BCF2BA /* QuartzCore.framework */; };
 		6A3D857C0F04993300BCF2BA /* frontside.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3D857A0F04993300BCF2BA /* frontside.png */; };
 		6A3D857D0F04993300BCF2BA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3D857B0F04993300BCF2BA /* icon.png */; };
-		6A3D87D30F05E0E900BCF2BA /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = 6A3D87D20F05E0E900BCF2BA /* ToDo */; };
+		6A3D87D30F05E0E900BCF2BA /* ToDo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6A3D87D20F05E0E900BCF2BA /* ToDo.txt */; };
 		6A3D87D60F05E47900BCF2BA /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D87D50F05E47900BCF2BA /* Card.m */; };
 		6A3D87D90F05E48C00BCF2BA /* Wallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3D87D80F05E48C00BCF2BA /* Wallet.m */; };
 		6A8E971E0F07E38C00C828B1 /* frontsidea.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A8E971D0F07E38C00C828B1 /* frontsidea.png */; };
@@ -41,17 +41,17 @@
 		1D6058910D05DD3D006BFB54 /* PassCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		280E754A0DD40C5E005A515E /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
-		280E754B0DD40C5E005A515E /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		280E754B0DD40C5E005A515E /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		280E754C0DD40C5E005A515E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		288765580DF743DE002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		289233A20DB2D0840083E9F9 /* FlipsideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideView.h; path = Classes/FlipsideView.h; sourceTree = "<group>"; };
 		289233A30DB2D0840083E9F9 /* FlipsideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideView.m; path = Classes/FlipsideView.m; sourceTree = "<group>"; };
-		289233A40DB2D0840083E9F9 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = Classes/MainView.h; sourceTree = "<group>"; };
-		289233A50DB2D0840083E9F9 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = Classes/MainView.m; sourceTree = "<group>"; };
-		289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		289233AA0DB2D0DB0083E9F9 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		289233AB0DB2D0DB0083E9F9 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		289233A40DB2D0840083E9F9 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = Classes/CardView.h; sourceTree = "<group>"; };
+		289233A50DB2D0840083E9F9 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardView.m; path = Classes/CardView.m; sourceTree = "<group>"; };
+		289233A80DB2D0DB0083E9F9 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		289233A90DB2D0DB0083E9F9 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
+		289233AA0DB2D0DB0083E9F9 /* WalletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalletViewController.h; sourceTree = "<group>"; };
+		289233AB0DB2D0DB0083E9F9 /* WalletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalletViewController.m; sourceTree = "<group>"; };
 		289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		6A3D85640F04990A00BCF2BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		6A3D857A0F04993300BCF2BA /* frontside.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontside.png; sourceTree = "<group>"; };
 		6A3D857B0F04993300BCF2BA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		6A3D87D20F05E0E900BCF2BA /* ToDo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		6A3D87D20F05E0E900BCF2BA /* ToDo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
 		6A3D87D40F05E47900BCF2BA /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		6A3D87D50F05E47900BCF2BA /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		6A3D87D70F05E48C00BCF2BA /* Wallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wallet.h; sourceTree = "<group>"; };
@@ -97,10 +97,10 @@
 			children = (
 				289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */,
 				289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */,
-				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
-				289233A90DB2D0DB0083E9F9 /* MainViewController.m */,
-				289233AA0DB2D0DB0083E9F9 /* RootViewController.h */,
-				289233AB0DB2D0DB0083E9F9 /* RootViewController.m */,
+				289233A80DB2D0DB0083E9F9 /* CardViewController.h */,
+				289233A90DB2D0DB0083E9F9 /* CardViewController.m */,
+				289233AA0DB2D0DB0083E9F9 /* WalletViewController.h */,
+				289233AB0DB2D0DB0083E9F9 /* WalletViewController.m */,
 				1D3623240D0F684500981E51 /* PassCardsAppDelegate.h */,
 				1D3623250D0F684500981E51 /* PassCardsAppDelegate.m */,
 			);
@@ -145,11 +145,11 @@
 			isa = PBXGroup;
 			children = (
 				6A8E971D0F07E38C00C828B1 /* frontsidea.png */,
-				6A3D87D20F05E0E900BCF2BA /* ToDo */,
+				6A3D87D20F05E0E900BCF2BA /* ToDo.txt */,
 				6A3D857A0F04993300BCF2BA /* frontside.png */,
 				6A3D857B0F04993300BCF2BA /* icon.png */,
 				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
-				280E754B0DD40C5E005A515E /* MainView.xib */,
+				280E754B0DD40C5E005A515E /* CardView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 			);
@@ -193,8 +193,8 @@
 			children = (
 				6A3D854D0F04983000BCF2BA /* FlipView.h */,
 				6A3D854E0F04983000BCF2BA /* FlipView.m */,
-				289233A40DB2D0840083E9F9 /* MainView.h */,
-				289233A50DB2D0840083E9F9 /* MainView.m */,
+				289233A40DB2D0840083E9F9 /* CardView.h */,
+				289233A50DB2D0840083E9F9 /* CardView.m */,
 				289233A20DB2D0840083E9F9 /* FlipsideView.h */,
 				289233A30DB2D0840083E9F9 /* FlipsideView.m */,
 			);
@@ -262,11 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */,
-				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
+				280E754E0DD40C5E005A515E /* CardView.xib in Resources */,
 				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
 				6A3D857C0F04993300BCF2BA /* frontside.png in Resources */,
 				6A3D857D0F04993300BCF2BA /* icon.png in Resources */,
-				6A3D87D30F05E0E900BCF2BA /* ToDo in Resources */,
+				6A3D87D30F05E0E900BCF2BA /* ToDo.txt in Resources */,
 				49A68BB60F06323F00DE5580 /* Settings.bundle in Resources */,
 				6A8E971E0F07E38C00C828B1 /* frontsidea.png in Resources */,
 			);
@@ -282,9 +282,9 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* PassCardsAppDelegate.m in Sources */,
 				289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */,
-				289233A70DB2D0840083E9F9 /* MainView.m in Sources */,
-				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
-				289233AF0DB2D0DB0083E9F9 /* RootViewController.m in Sources */,
+				289233A70DB2D0840083E9F9 /* CardView.m in Sources */,
+				289233AE0DB2D0DB0083E9F9 /* CardViewController.m in Sources */,
+				289233AF0DB2D0DB0083E9F9 /* WalletViewController.m in Sources */,
 				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
 				6A3D85550F04983000BCF2BA /* FlipView.m in Sources */,
 				6A3D85560F04983000BCF2BA /* ppp.c in Sources */,
