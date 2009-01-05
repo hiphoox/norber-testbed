@@ -14,16 +14,19 @@
 
 @synthesize window;
 @synthesize walletViewController;
+@synthesize optionsViewController;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   
-  [window addSubview:[walletViewController view]];
+  [window addSubview:[optionsViewController view]];
+//  [window addSubview:[walletViewController view]];
   [window makeKeyAndVisible];
 }
 
 
 - (void)dealloc {
+  [optionsViewController release];
   [walletViewController release];
   [window release];
   

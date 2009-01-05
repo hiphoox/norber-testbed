@@ -7,7 +7,7 @@
 //
 
 #import "CardViewController.h"
-#import "MainView.h"
+#import "CardView.h"
 
 #define LABEL_TEXT		990
 #define LABEL_CARD_NUMBER		991
@@ -26,11 +26,13 @@
   return self;
 }
 
+
 - (void)setWalletName: (NSString *)newWalletName
 {
   [currentWallet setName:newWalletName];
   [cardNameLabel setText:newWalletName];
 }
+
 
 - (UILabel *) addLabelWithText: (NSString *) text  {
   UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 50.0f, 40.0f)];
@@ -122,10 +124,10 @@
 }
 
 // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  // Return YES for supported orientations
-  return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
-}
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+//  // Return YES for supported orientations
+//  return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+//}
 
 
 - (void)didReceiveMemoryWarning {

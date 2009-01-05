@@ -9,14 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @class WalletViewController;
+@class OptionsViewController;
+@class WalletsNavigationController;
 
 @interface PassCardsAppDelegate : NSObject <UIApplicationDelegate> {
   UIWindow *window;
   WalletViewController *walletViewController;
+  WalletsNavigationController *optionsViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet WalletViewController *walletViewController;
+@property (nonatomic, retain) IBOutlet WalletsNavigationController *optionsViewController;
 
 @end
 

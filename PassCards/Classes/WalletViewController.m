@@ -27,7 +27,8 @@
   [viewController release];
   
   [self.view insertSubview:cardViewController.view belowSubview:infoButton];
-  [flipsideNavigationBar removeFromSuperview]; //At the beginning hide Navigation bar
+  [flipsideNavigationBar removeFromSuperview];
+
 }
 
 
@@ -86,10 +87,30 @@
 
 
 // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  // Return YES for supported orientations
-  return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
-}
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+//  // Return YES for supported orientations
+//  return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+//}
+
+//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration  {
+//  
+//	CGRect apprect;
+//	apprect.origin = CGPointMake(0.0f, 0.0f);
+//	
+//	if ((orientation == UIInterfaceOrientationLandscapeLeft) || (orientation == UIInterfaceOrientationLandscapeRight))
+//		apprect.size = CGSizeMake(480.0f, 300.0f);
+//	else
+//		apprect.size = CGSizeMake(320.0f, 460.0f);
+//  
+//	// Iterate through the subviews and inset each item
+//	float offset = 0.0f;//32.0f;
+//	for (UIView *subview in [self.view subviews])	
+//	{
+//		CGRect frame = CGRectInset(apprect, offset, offset);
+//		[subview setFrame:frame];
+//		offset += 32.0f;
+//	}
+//}
 
 
 - (void)didReceiveMemoryWarning {
