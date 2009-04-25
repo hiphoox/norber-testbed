@@ -27,6 +27,7 @@
 		257573A9072882FA000BE9CA /* AppleScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAFB99DB0344B18C03A80106 /* AppleScriptKit.framework */; };
 		257573AC072882FA000BE9CA /* LLVMXcodePlugin.applescript in AppleScript */ = {isa = PBXBuildFile; fileRef = 65DBA0C00447BAAB00246FD8 /* LLVMXcodePlugin.applescript */; settings = {ATTRIBUTES = (Debug, ); }; };
 		60A015150DBD30060071D9A8 /* LLVMXcodePlugin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60A015130DBD30060071D9A8 /* LLVMXcodePlugin.xib */; };
+		6A15CC290FA387A5009BD259 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 6A15CC280FA387A5009BD259 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		65DBA0C00447BAAB00246FD8 /* LLVMXcodePlugin.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = LLVMXcodePlugin.applescript; sourceTree = "<group>"; };
 		65DBA1180447BC6B00246FD8 /* LLVMXcodePlugin.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LLVMXcodePlugin.h; sourceTree = "<group>"; };
 		65DBA1190447BC6B00246FD8 /* LLVMXcodePlugin.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = LLVMXcodePlugin.m; sourceTree = "<group>"; };
+		6A15CC280FA387A5009BD259 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		DAFB99DB0344B18C03A80106 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				60A015130DBD30060071D9A8 /* LLVMXcodePlugin.xib */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 				653593E6078DD4FA00E8BB2F /* AppleScriptKit.sdef */,
+				6A15CC280FA387A5009BD259 /* README */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			files = (
 				257573A3072882FA000BE9CA /* InfoPlist.strings in Resources */,
 				60A015150DBD30060071D9A8 /* LLVMXcodePlugin.xib in Resources */,
+				6A15CC290FA387A5009BD259 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

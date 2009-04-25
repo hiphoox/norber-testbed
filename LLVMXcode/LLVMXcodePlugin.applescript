@@ -2,7 +2,7 @@
 -- LLVMXcode
 
 --  Created by Norberto Ortigoza on 02/08/08.
---  Copyright 2008 CrossHorizons. All rights reserved.
+--  Copyright 2008 StoneFree Software. All rights reserved.
 on plugin loaded theBundle
 	
 	script padre
@@ -93,6 +93,7 @@ on plugin loaded theBundle
 				tell its front window
 					set mytab to (selected tab)
 				end tell
+				activate
 				do script scanCommand in mytab
 			end tell
 			

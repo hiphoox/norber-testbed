@@ -3,7 +3,7 @@
 //  LLVMXcode
 //
 //  Created by Norberto Ortigoza on 02/08/08.
-//  Copyright 2008 CrossHorizons. All rights reserved.
+//  Copyright 2008 StoneFree Software. All rights reserved.
 //
 
 #import "LLVMXcodePlugin.h"
